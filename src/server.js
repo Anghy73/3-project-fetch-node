@@ -1,19 +1,23 @@
 const express = require('express');
 const morga = require('morgan')
 const ejs = require('ejs')
+const dotenv = require('dotenv').config()
 const path = require('path')
 
 const app = express();
 
-app.use(morga('dev'))
 
+app.set('SERVER', process.env.SERVER || 'Server-Fetch')
+app.set('PORT', process.env.PORT || 7000)
+app.set('API', process.env.API)
 app.set('views', path.join(__dirname, '/views'))
 app.set('view engine', 'ejs')
 
+app.use(morga('dev'))
 
 const fetchData = async (req, res) => {
   try {
-    const response = await fetch('http://jsonplaceholder.typicode.com/posts')
+    const response = await fetch(app.get('API'))
     const data = await response.json()
     res.render('home', {
       data
@@ -25,9 +29,8 @@ const fetchData = async (req, res) => {
 
 app.get('/', (req, res) => {
   fetchData(req, res)
-  // res.send('Hola Mundo <3')
 })
 
-app.listen(7000, () => {
-  console.log('Server ready in the port 7000')
+app.listen(app.get('PORT'), () => {
+  console.log(`${app.get('SERVER')} ready on the port ${app.get('PORT')}`)
 })
