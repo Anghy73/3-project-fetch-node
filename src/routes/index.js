@@ -2,6 +2,46 @@ const { Router } = require('express')
 
 const router = Router()
 
+let profiles = [
+  {
+    "id": 1,
+    "name": "López",
+    "lastname": "Gonzáles",
+    "age": 35,
+    "country": "Chile",
+    "hobbies": [
+      "Books",
+      "Techno",
+      "Biker"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Perez",
+    "lastname": "Cabrera",
+    "age": 29,
+    "country": "España",
+    "hobbies": [
+      "Travel",
+      "Dance",
+      "Sing"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Andy",
+    "lastname": "Ruz",
+    "age": 18,
+    "country": "Chile",
+    "hobbies": [
+      "Programming",
+      "Street workout",
+      "Games"
+    ]
+  }
+]
+
+
 let count = 0
 
 const fetchData = async (req, res, page) => {
@@ -19,7 +59,10 @@ const fetchData = async (req, res, page) => {
 }
 
 router.get('/', (req, res) => {
-  fetchData(req, res, 'home')
+  res.render('home', {
+    profiles,
+    link: 1
+  })
 })
 
 router.get('/blogs/:id', (req, res) => {

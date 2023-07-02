@@ -1,11 +1,32 @@
 <%- include('./partials/header.ejs')%>
-  <h1>Some Profiles</h1>
-
-  <!-- <% for(let i = 0; i < 5; i++) { %>
-    <div> <%= data[i].title %> </div>
-    <br>
-  <% } %> -->
-
-
+  <main class="main">
+    <div class="main__content">
+      <% for(let i=0; i < profiles.length; i++) { %>
+        <div class="main__profile">
+          <p class="main__name">
+            <%= profiles[i].name %>
+              <%= profiles[i].lastname %>
+          </p>
+          <div class="main__info">
+            <span class="main__age">
+              <%= profiles[i].age %>
+            </span>
+            <span class="main__country">
+              <%= profiles[i].country %>
+            </span>
+          </div>
+          <span class="main__hobbie--title">Hobbies</span>
+          <ul class="main__hobbies">
+            <% for(let j=0; j < profiles[i].hobbies.length; j++ ) { %>
+              <li class="main__hobbie">
+                <%= profiles[i].hobbies[j] %>
+              </li>
+              <% } %>
+          </ul>
+          <a href="/blogs/<%= link++ %>" class="main__button">Blogs</a>
+        </div>
+        <% } %>
+    </div>
+  </main>
 </body>
 </html>
