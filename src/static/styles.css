@@ -1,0 +1,67 @@
+/* :root {
+  --primary-color: #222;
+  --secundary-color: #00beef;
+  --black-color: #000;
+  --white-color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  height: 14vh;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  background-color: var(--black-color);
+}
+
+.header__logo {
+  font-size: 2rem;
+}
+
+.header__content {
+  display: flex;
+  height: 100%;
+}
+
+.header__item {
+  list-style: none;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  color: var(--secundary-color);
+  text-decoration: none;
+}
+
+.header__menu {
+  display: none;
+} */

@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs')%>
+  <h1>Mostrar 3 blogs de los primero 3 users</h1>
+
+
+  <% for(let i = 0; i < data.length; i++) { %>
+    <% if (data[i].userId == 1 && count <= 3) { %>
+      <div> <%= data[i].title %> </div>
+      <% count++ %>
+    <% } %>
+    <% if (data[i].userId == 2 && count <= 6) { %>
+      <div> <%= data[i].title %> </div>
+      <% count++ %>
+    <% } %>
+    <% if (data[i].userId == 3 && count <= 9) { %>
+      <div> <%= data[i].title %> </div>
+      <% count++ %>
+    <% } %>
+  <% } %>
+
+</body>
+</html>
