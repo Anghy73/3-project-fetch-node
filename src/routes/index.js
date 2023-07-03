@@ -41,8 +41,8 @@ let profiles = [
   }
 ]
 
-
 let count = 0
+let link = 1
 
 const fetchData = async (req, res, page) => {
   try {
@@ -51,7 +51,9 @@ const fetchData = async (req, res, page) => {
     res.render(page, {
       data,
       count,
-      params: req.params
+      link,
+      params: req.params,
+      query: req.query
     })
   } catch (e) {
     console.log(e)
@@ -69,7 +71,6 @@ router.get('/blogs/:id', (req, res) => {
   if (req.params.id >= 4) {
     return res.render('404')
   }
-
   fetchData(req, res, 'blogs')
 })
 

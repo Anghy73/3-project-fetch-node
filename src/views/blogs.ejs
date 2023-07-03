@@ -1,58 +1,83 @@
 <%- include('./partials/header.ejs')%>
-  <h1>Mostrar 4 blogs de los primero 3 users</h1>
-
 
   <% if (params.id == 0) { %>
-    <% for(let i = 0; i < data.length; i++) { %>
-      <% if (data[i].userId == 1 && count <= 3) { %>
-        <div> <%= data[i].title %> </div>
-        <% count++ %>
+    <h2 class="blogs__title" >Blogs</h2>
+    <div class="grid__container">
+
+      <% for(let i = 0; i < data.length; i++) { %>
+        <% if (data[i].userId == 1 && count <= 3) { %>
+          <div class="grid__content">
+            <a href="#" class="grid__title"> <%= data[i].title %> </a>
+            <p class="grid__creator">Create by <span class="grid__creator--name">López</span></p>
+          </div>
+          <% count++ %>
+        <% } %>
+        <% if (data[i].userId == 2 && count <= 7) { %>
+          <div class="grid__content">
+            <a href="#" class="grid__title"> <%= data[i].title %> </a>
+            <p class="grid__creator">Create by <span class="grid__creator--name">Perez</span></p>
+          </div>
+          <% count++ %>
+        <% } %>
+        <% if (data[i].userId == 3 && count <= 11) { %>
+          <div class="grid__content">
+            <a href="#" class="grid__title"> <%= data[i].title %> </a>
+            <p class="grid__creator">Create by <span class="grid__creator--name">Andy</span></p>
+          </div>
+          <% count++ %>
+        <% } %>
       <% } %>
-      <% if (data[i].userId == 2 && count <= 7) { %>
-        <div> <%= data[i].title %> </div>
-        <% count++ %>
-      <% } %>
-      <% if (data[i].userId == 3 && count <= 11) { %>
-        <div> <%= data[i].title %> </div>
-        <% count++ %>
-      <% } %>
-    <% } %>
+    </div>
   <% } %>
 
 
   <% if (params.id == 1) { %>
+    <h2 class="blogs__title">Blogs</h2>
     <% console.log('ES 1') %>
-    <% for (let i = 0; i < data.length; i++) { %>
-      <% if (data[i].userId == 1 && count <= 3) { %>
-        <div> <%= data[i].title %> </div>
-        <div> <%= i %> </div>
-        <% count++ %>
+    <div class="grid__container">
+      <% for (let i = 0; i < data.length; i++) { %>
+        <% if (data[i].userId == 1 && count <= 3) { %>
+          <div class="grid__content">
+            <p class="grid__title"> <%= data[i].title %> </p>
+            <p class="grid__creator">Create by <span class="grid__creator--name">López</span></p>
+          </div>
+          <% count++ %>
+        <% } %>
       <% } %>
-    <% } %>
+    </div>
   <% } %>
 
   <% if (params.id == 2) { %>
+    <h2 class="blogs__title">Blogs</h2>
     <% console.log('ES 2') %>
-    <% for (let i = 0; i < data.length; i++) { %>
-      <% if (data[i].userId == 2 && count <= 3) { %>
-        <div> <%= data[i].title %> </div>
-        <div> <%= i %> </div>
-        <% count++ %>
+    <div class="grid__container">
+      <% for (let i = 0; i < data.length; i++) { %>
+        <% if (data[i].userId == 2 && count <= 3) { %>
+          <div class="grid__content">
+            <p class="grid__title"> <%= data[i].title %> </p>
+            <p class="grid__creator">Create by <span class="grid__creator--name">Perez</span></p>
+          </div>
+          <% count++ %>
+        <% } %>
       <% } %>
-    <% } %>
+    </div>
   <% } %>
 
   <% if (params.id == 3) { %>
+    <h2 class="blogs__title">Blogs</h2>
     <% console.log('ES 3') %>
-    <% for (let i = 0; i < data.length; i++) { %>
-      <% if (data[i].userId == 3 && count <= 3) { %>
-        <div> <%= data[i].title %> </div>
-        <div> <%= i %> </div>
-        <% count++ %>
+    <div class="grid__container">
+      <% for (let i = 0; i < data.length; i++) { %>
+        <% if (data[i].userId == 3 && count <= 3) { %>
+          <div class="grid__content">
+            <p class="grid__title"> <%= data[i].title %> </p>
+            <p class="grid__creator">Create by <span class="grid__creator--name">Andy</span></p>
+          </div>
+          <% count++ %>
+        <% } %>
       <% } %>
-    <% } %>
+    </div>
   <% } %>
-
 
 </body>
 </html>

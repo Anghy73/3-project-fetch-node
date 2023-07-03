@@ -4,6 +4,7 @@
   --tertiary-color: #222;
   --black-color: #000;
   --white-color: #fff;
+  --gold-color: #FBC740;
 }
 
 html {
@@ -60,7 +61,7 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 1.5rem;
+  padding: 0 1.3rem;
   font-size: 1.6rem;
   color: var(--white-color);
   text-decoration: none;
@@ -120,7 +121,7 @@ body {
   margin: 2.5rem 0 2rem 0;
   font-size: 1.6rem;
   font-weight: 700;
-  color: #FBC740;
+  color: var(--gold-color);
 }
 
 .main__hobbies {
@@ -160,4 +161,49 @@ body {
   background-color: var(--secundary-color);
   border-color: transparent;
   transition: 400ms all;
+}
+
+/* GRID */
+
+.blogs__title {
+  margin: 5rem 0;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 1rem;
+  min-height: 250px;
+  padding: 0 5rem;
+  margin-bottom: 6rem;
+}
+
+.grid__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  background-color: var(--tertiary-color);
+  padding: 2rem;
+  color: var(--white-color);
+}
+
+.grid__title {
+  margin-bottom: 3.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secundary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.grid__creator {
+  font-size: 1.6rem;
+}
+
+.grid__creator--name {
+  color: var(--gold-color);
 }
